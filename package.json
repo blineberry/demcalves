@@ -1,0 +1,33 @@
+{
+  "name": "demcalves",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx @11ty/eleventy --formats=html,liquid,njk --output=docs",
+    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --watch",
+    "serve": "npx @11ty/eleventy --serve --formats=html,liquid,njk --output=docs",
+    "start": "npx @11ty/eleventy --serve --formats=html,liquid,njk --output=docs",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blineberry/demcalves.git"
+  },
+  "author": "Brent Lineberry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blineberry/demcalves/issues"
+  },
+  "homepage": "https://github.com/blineberry/demcalves#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
+    "luxon": "^2.4.0",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4"
+  }
+}

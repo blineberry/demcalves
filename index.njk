@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+title: 2022 Dem Calves 5k
+---
+<script>
+function updateTimer(targetTime, countdownElement) {
+  let now = new Date();
+
+  // https://www.w3schools.com/howto/howto_js_countdown.asp
+  let timeleft = targetTime.getTime() - now.getTime();
+
+  if (timeleft <= 0) {
+    timeleft = 0;
+  }
+
+  // https://stackoverflow.com/a/57805/814492
+  // we want to end on a "Green means Go" color, so add the decimal 
+  // conversion of the hex 7CFC00, so that if timeleft == 0, it's green!
+  let hexString = (timeleft + 8190976).toString(16).slice(-6);
+  
+  let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+  countdown.innerHTML = `<span style="color: #${hexString};">${days}d ${hours}h ${minutes}m ${seconds}s</span>`;
+}
+
+</script>
+<div class="h-event container">
+  <header class="row text-center">
+    <h1 class="p-name display-1 col">{{ title }}</h1>
+  </header>
+  <div role="timer" id="countdown" class="display-5 text-center mb-4"><small class="text-muted">countdown timer loading…</small></div>
+  <dl class="row">
+    <dt class="col-sm-3">Start</dt>
+    <dd class="col-sm-9"><time class="dt-start" datetime="2022-12-17T08:00:00.000-05:00" id="start">Saturday, December 17th, 8:00am</time></dd>
+    <dt class="col-sm-3">Location</dt>
+    <dd class="col-sm-9"><abbr title="If You Know You Know" class="p-location">IYKYK</abbr></dd>
+    <dt class="col-sm-3">Reigning Champion</dt>
+    <dd class="col-sm-9">Catherine B. (2021&ndash;)</dd>
+  </dl>
+  <p class="p-description e-content">Scott was born on xmas day. To celebrate him, his wife Jen started a 5k race called “Dem Calves” (I mean have you seen the man&rsquo;s calves?). This race is a one mile loop run three times from Scott's house. In between each loop Jen thinks up some activity we have to do (ie make Scott a bday poem, eat a powdered donut) before starting the next loop. There is a trophy. This years Dem Calves will be Dec 17 at 8 am. Mark your calendars.</p>
+</div>
+
+<script>
+  const start = document.getElementById('start');
+  const startTime = new Date(Date.parse(start.getAttribute('datetime')));
+  const countdown = document.getElementById('countdown');
+
+  // go ahead and run it so we're not waiting for the first interval to expire before it shows
+  updateTimer(startTime,countdown);
+  window.setInterval(updateTimer, 1000, startTime, countdown);
+</script>
