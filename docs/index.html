@@ -9,15 +9,34 @@
 </head>
 <body>
     <header class="container">
-        <nav class="navbar navbar-expand bg-light mt-3">
+        <nav class="navbar navbar-expand-sm bg-light mt-3">
             <div class="container-fluid">
-            <div class="collapse navbar-collapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" href="/"  aria-current="page">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="/halloffame/" >Hall of Fame</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/results/2021" >2021</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/results/2020" >2020</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/results/2019" >2019</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/results/2018" >2018</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/results/2017" >2017</a>
                     </li> 
                 </ul>
             </div>
@@ -64,6 +83,14 @@ function updateTimer(targetTime, countdownElement) {
     <dd class="col-sm-9">Catherine B. (2021&ndash;)</dd>
   </dl>
   <p class="p-description e-content">Scott was born on xmas day. To celebrate him, his wife Jen started a 5k race called “Dem Calves” (I mean have you seen the man&rsquo;s calves?). This race is a one mile loop run three times from Scott's house. In between each loop Jen thinks up some activity we have to do (ie make Scott a bday poem, eat a powdered donut) before starting the next loop. There is a trophy. This years Dem Calves will be Dec 17 at 8 am. Mark your calendars.</p>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/images/2018/1.jpg" class="d-block w-100" alt="A gold-colored plastic trophy of a runner is held in someone's left hand. The label on the statue says 'WINNER'.">
+        </div>
+      </div>
+    </div>
 </div>
 
 <script>
@@ -78,5 +105,6 @@ function updateTimer(targetTime, countdownElement) {
     </main>
     <footer></footer>
     <!-- Current page: / -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -4,11 +4,11 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx @11ty/eleventy --formats=html,liquid,njk --output=docs",
+    "build": "npx @11ty/eleventy --formats=html,liquid,njk,jpg --output=docs",
     "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
     "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve --formats=html,liquid,njk --output=docs",
-    "start": "npx @11ty/eleventy --serve --formats=html,liquid,njk --output=docs",
+    "serve": "npx @11ty/eleventy --serve --formats=html,liquid,njk,jpg --output=docs",
+    "start": "npx @11ty/eleventy --serve --formats=html,liquid,njk,jpg --output=docs",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
