@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+eleventyComputed: 
+    title: "{{ result.year }} Results | Dem Calves 5k"
+    carouselId: "results-carousel-{{ result.year }}"
+---
+  <div class="container">
+    <h1 class="display-1 text-center">{{ result.year }} Dem Calves{% if result.isVirtual %} (Virtual){% endif %}&nbsp;Results</h1>
+    
+    <h2 class="text-center display-5">Winner: {{ result.winner | noOrphans }}</h2>
+
+    <h2>Challenges:</h2>
+    <ol>
+    {% for challenge in result.challenges %}
+        <li>{{ challenge }}</li>
+    {% endfor %}
+    </ol>
+
+    {% if imagesByYear[result.year] %}
+    <div id="{{ carouselId }}" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+        {% for image in imagesByYear[result.year] %}
+            <div class="carousel-item {% if image.path === result.activeImage %}active{% endif %}">
+            <img src="/images/{{ image.path }}" class="d-block w-100" alt="{{ img.alt }}">
+            </div>
+        {% endfor %}
+        </div>
+        {% if imagesByYear[result.year].length > 1 %}
+        <button class="carousel-control-prev" type="button" data-bs-target="#{{ carouselId }}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#{{ carouselId }}" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
