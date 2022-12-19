@@ -1,7 +1,9 @@
 ---
 layout: layouts/base.njk
 title: Dem Calves 5k
-startImagePath: 2022/1.jpg
+startImagePath: "2022/1.jpg"
+eleventyComputed:
+  images: images.
 ---
 <script>
 function updateTimer(targetTime, countdownElement) {
@@ -51,12 +53,14 @@ function updateTimer(targetTime, countdownElement) {
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-      {% for image in images|sortAllImages %}
+      {% for image in imagesSortedForHomePage %}
+      <!-- {{ image.path }} === {{ startImagePath }} -->
         <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="{{ loop.index - 1 }}" {% if image.path === startImagePath %}class="active" aria-current="true" {% endif %} aria-label="Slide {{ loop.index }}"></button>
       {% endfor %}
       </div>
     <div class="carousel-inner">
-      {% for image in images|sortAllImages %}
+      {% for image in imagesSortedForHomePage %}
+      <!-- {{ image.path }} === {{ startImagePath }} -->
         <div class="carousel-item {% if image.path === startImagePath %}active{% endif %}">
           <img src="/images/{{ image.path }}" class="d-block w-100" alt="{{ image.alt }}">
         </div>
