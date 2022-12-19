@@ -13,14 +13,4 @@ module.exports = function(eleventyConfig) {
 
         return parts.join(' ');
     });
-
-    eleventyConfig.addFilter("sortAllImages", function(value) {
-        return value.sort((a,b) => {
-            if (a.year === b.year) {
-                return -1;
-            }
-
-            return a.year - b.year;
-        });
-    });
 }
