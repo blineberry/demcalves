@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
-title: 2022 Dem Calves 5k
+title: Dem Calves 5k
+startImagePath: 2022/1.jpg
 ---
 <script>
 function updateTimer(targetTime, countdownElement) {
@@ -29,16 +30,20 @@ function updateTimer(targetTime, countdownElement) {
 </script>
 <div class="h-event container">
   <header class="row text-center">
-    <h1 class="p-name display-1 col">2022 Dem Calves&nbsp;5k</h1>
+    <h1 class="p-name display-1 col">{{ title | noOrphans }}</h1>
   </header>
+  {% if event.start %}
   <div role="timer" id="countdown" class="display-5 text-center mb-4"><small class="text-muted">countdown timer loading…</small></div>
+  {% endif %}
   <dl class="row">
+  {% if event.start %}
     <dt class="col-sm-3">Start</dt>
-    <dd class="col-sm-9"><time class="dt-start" datetime="2022-12-17T08:00:00.000-05:00" id="start">Saturday, December 17th, 8:00am</time></dd>
+    <dd class="col-sm-9"><time class="dt-start" datetime="{{ event.start }}" id="start">{{ event.start | humanDate }}</time></dd>
     <dt class="col-sm-3">Location</dt>
     <dd class="col-sm-9"><abbr title="If You Know You Know" class="p-location">IYKYK</abbr></dd>
+  {% endif %}
     <dt class="col-sm-3">Reigning Champion</dt>
-    <dd class="col-sm-9">Catherine B. (2021&ndash;)</dd>
+    <dd class="col-sm-9">Brent L. (2022&ndash;)</dd>
   </dl>
   <p class="p-description e-content">Scott was born on xmas day. To celebrate him, his wife Jen started a 5k race called “Dem Calves” (I mean have you seen the man&rsquo;s calves?). This race is a one mile loop run three times from Scott's house. In between each loop Jen thinks up some activity we have to do (ie make Scott a bday poem, eat a powdered donut) before starting the next loop. There is a trophy. This years Dem Calves will be Dec 17 at 8 am. Mark your calendars.</p>
 
@@ -46,29 +51,16 @@ function updateTimer(targetTime, countdownElement) {
 
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      {% for image in images|sortAllImages %}
+        <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="{{ loop.index - 1 }}" {% if image.path === startImagePath %}class="active" aria-current="true" {% endif %} aria-label="Slide {{ loop.index }}"></button>
+      {% endfor %}
       </div>
-
     <div class="carousel-inner">
-      <div class="carousel-item">
-          <img src="/images/2020/1.jpg" class="d-block w-100" alt="A handwritten poem that says: 'There resides a Scott on South Candler, / A stunning athletic running rambler. / His calvese are so bouldery, / They exhaust all his hosiery. / I hope he gets a birthday sock sampler! / / Brent!'">
+      {% for image in images|sortAllImages %}
+        <div class="carousel-item {% if image.path === startImagePath %}active{% endif %}">
+          <img src="/images/{{ image.path }}" class="d-block w-100" alt="{{ image.alt }}">
         </div>
-        <div class="carousel-item">
-          <img src="/images/2019/1.jpg" class="d-block w-100" alt="A group of sweaty people stand on the front porch of a house smiling and full of happy wishes for the birthday boy.">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/2019/2.jpg" class="d-block w-100" alt="Two sweaty dudes race to wrap presents while wearing large latex gloves.">
-        </div>
-      <div class="carousel-item active">
-        <img src="/images/2018/1.jpg" class="d-block w-100" alt="A gold-colored plastic trophy of a runner is held in someone's left hand. The label on the statue says 'WINNER'.">
-      </div>
-      <div class="carousel-item">
-        <img src="/images/2018/2.jpg" class="d-block w-100" alt="People are eating at a dining room table. One person is standing on a chair, holding a trophy and giving a speech.">
-      </div>
+        {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -80,6 +72,7 @@ function updateTimer(targetTime, countdownElement) {
     </button>
   </div>
 
+{% if event.start %}
 <script>
   const start = document.getElementById('start');
   const startTime = new Date(Date.parse(start.getAttribute('datetime')));
@@ -89,3 +82,4 @@ function updateTimer(targetTime, countdownElement) {
   updateTimer(startTime,countdown);
   window.setInterval(updateTimer, 1000, startTime, countdown);
 </script>
+{% endif %}

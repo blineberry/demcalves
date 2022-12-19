@@ -1,0 +1,66 @@
+[{
+    "year": 2017,
+    "winner": "Scott L.",
+    "challenges": [
+        "Run 1 mile.",
+        "Write a powdered doughnut.",
+        "Run 1 mile.",
+        "Eat a poem/card.",
+        "Run 1 mile."
+    ]
+}, {
+    "year": 2018,
+    "winner": "Brent L.",
+    "challenges": [
+        "Run 1 mile.",
+        "Make a paper snowflake.",
+        "Run 1 mile.",
+        "Eat 10 pieces of popcorn without using your hands.",
+        "Run 1 mile."
+    ],
+    "activeImage": "2018/1.jpg"
+}, {
+    "year": 2019,
+    "winner": "Brent L.",
+    "challenges": [
+        "Run 1 mile.",
+        "Wrap a present wearing large latex gloves.",
+        "Run 1 mile.",
+        "Eat a package of pretzels while answering triva about Scott.",
+        "Run 1 mile."
+    ],
+    "activeImage": "2019/1.jpg"
+}, {
+    "year": 2020,
+    "winner": "Jennifer's Brother",
+    "challenges": [
+        "Run 1 mile.",
+        "Sing happy birthday to Scott and Joy into the Larimore's ring doorbell.",
+        "Run 1 mile.",
+        "Write a birthday poem to Scott in the “Birthday Poems Dem Calves 2020” notebook.",
+        "Run 1 mile."
+    ],
+    "isVirtual": true,
+    "activeImage": "2020/1.jpg"
+}, {
+    "year": 2021,
+    "winner": "Catherine B.",
+    "challenges": [
+        "Run 1 mile.",
+        "Eat a Dove chocolate and write a birthday card.",
+        "Run 1 mile.",
+        "Drink a shot of Jameson.",
+        "Run 1 mile."
+    ]
+}, {
+    "year": 2022,
+    "winner": "Brent L.",
+    "challenges": [
+        "Run 1 mile.",
+        "Complete a thematic word search.",
+        "Run 1 mile.",
+        "Take a picture of a bird you see with your own two eyes.",
+        "Run 1 mile."
+    ],
+    "activeImage": "2022/1.jpg"
+}]

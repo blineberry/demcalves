@@ -7,11 +7,10 @@ title: Hall of Fame | Dem Calves 5k
   
   <h2>Past Winners</h2>
       
-  <ol reversed start="2021" class="ps-5">
-      <li>Catherine B.</li>
-      <li>Nick F.</li>
-      <li>Brent L.</li>
-      <li>Brent L.</li>
-      <li>Scott L.</li>
+  <dl class="row">
+    {% for winner in winners %}
+      <dt class="col-2 col-sm-1">{{ winner.year }}</dt>
+      <dd class="col-10 col-sm-11">{{ winner.winner }}</dd>
+    {% endfor %}
   </ol>
 </div>
