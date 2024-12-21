@@ -74,4 +74,15 @@
         "Run 1 mile."
     ],
     "activeImage": "2023/1.jpg"
+}, {
+    "year": 2024,
+    "winner": "Stu A.",
+    "challenges": [
+        "Run 1 mile.",
+        "Decorate two cookies with icing and sprinkles.",
+        "Run 1 mile.",
+        "Trace your hand and color it as a bird.",
+        "Run 1 mile."
+    ],
+    "activeImage": ""
 }]
