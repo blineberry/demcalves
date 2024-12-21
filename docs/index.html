@@ -80,14 +80,7 @@ function updateTimer(targetTime, countdownElement) {
     <h1 class="p-name display-1 col">Dem Calves 5k</h1>
   </header>
   
-  <div role="timer" id="countdown" class="display-5 text-center mb-4"><small class="text-muted">countdown timer loading…</small></div>
-  
   <dl class="row">
-  
-    <dt class="col-sm-3">Start</dt>
-    <dd class="col-sm-9"><time class="dt-start" datetime="2024-12-21T09:00:00.000-05:00" id="start">Saturday, December 21, 2024 at 9:00 AM</time></dd>
-    <dt class="col-sm-3">Location</dt>
-    <dd class="col-sm-9"><abbr title="If You Know You Know" class="p-location">IYKYK</abbr></dd>
   
     <dt class="col-sm-3">Reigning Champion</dt>
     <dd class="col-sm-9">Britt F. (2023&ndash;)</dd>
@@ -241,16 +234,6 @@ function updateTimer(targetTime, countdownElement) {
     </button>
   </div>
 
-
-<script>
-  const start = document.getElementById('start');
-  const startTime = new Date(Date.parse(start.getAttribute('datetime')));
-  const countdown = document.getElementById('countdown');
-
-  // go ahead and run it so we're not waiting for the first interval to expire before it shows
-  updateTimer(startTime,countdown);
-  window.setInterval(updateTimer, 1000, startTime, countdown);
-</script>
 
     </main>
     <footer></footer>
